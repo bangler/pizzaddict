@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/div.css" rel="stylesheet" />
+    <link href="css/bg.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+<header class="about-header" style="padding-top:8%;">
+    <div class="text-center">
+        <h2 class="" style="font-size:50px" >Login</h2>
+        <p>Home / Login</p>
+      <br><br><br><br><br>
+    </div>
+</header>
+<div class="container">
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+              class="img-fluid" alt="Phone image">
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <h2>Login</h2><br>
+            <form action="#" method="POST" id="loginForm">
+              <div class="form-outline mb-4">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Enter a valid username" required>
+              </div>
+              <div class="form-outline mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Enter password" required>
+              </div>
+    
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- Checkbox -->
+                <div class="form-check mb-0">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                  <label class="form-check-label" for="form2Example3">
+                    Remember me
+                  </label>
+                </div>
+              </div>
+    
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="submit" class="btn btn-primary btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                  <a type="button" class="btn btn-secondary btn-lg" href="index.html"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Back</a>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="registration.html"
+                    class="link-danger">Register</a></p>
+              </div>
+    
+            </form>
+          </div>
+        </div>
+      </div>
+      </section>
+    </div>
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; PizzAddict 2023</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- Bootstrap JS and Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // Function to authenticate user
+function authenticateUser(username, password) {
+  let storedData = localStorage.getItem('userData');
+  storedData = storedData ? JSON.parse(storedData) : [];
+
+  const authenticatedUser = storedData.find(user => user.username === username && user.password === password);
+
+  // Check if user is banned or temporarily blocked
+  if (authenticatedUser) {
+    if (authenticatedUser.status === 'Banned') {
+      return { banned: true }; // Return a flag indicating the user is banned
+    } else if (authenticatedUser.status === 'Temporary Blocked') {
+      return { temporaryBlocked: true }; // Return a flag indicating the user is temporarily blocked
+    }
+  }
+
+  return authenticatedUser;
+}
+
+function handleLoginForm() {
+  const loginForm = document.getElementById('loginForm');
+  loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = loginForm.elements['username'].value;
+    const password = loginForm.elements['password'].value;
+
+    const authenticatedUser = authenticateUser(username, password);
+
+    if (authenticatedUser && authenticatedUser.banned) {
+      alert('Sorry, your account has been banned.');
+    } else if (authenticatedUser && authenticatedUser.temporaryBlocked) {
+      alert('Your account is Temporarily Blocked.');
+    } else if (authenticatedUser) {
+      alert('Login successful!');
+      const redirectURL = `menu.html?username=${encodeURIComponent(username)}&first-name=${encodeURIComponent(authenticatedUser['first-name'])}&last-name=${encodeURIComponent(authenticatedUser['last-name'])}`;
+      window.location.href = redirectURL;
+    } else {
+      alert('Invalid username or password. Please try again.');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', handleLoginForm);
+
+
+  </script>
+    
+</body>
+</html>

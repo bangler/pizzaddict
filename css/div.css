@@ -1,0 +1,35 @@
+.top-box {
+    position: absolute;
+    background-image: url("../assets/img/div/order-top.png");
+    height: 160px;  
+    width: 100%;
+    left: 0px;
+    top: 700px;
+  }
+
+  .special-box {
+    position: absolute;
+    background-image: url("../assets/img/div/chef-top-bg.png");
+    height: 160px;  
+    width: 100%;
+    left: 0px;
+    top: 1200px;
+  }
+
+  .menu-box {
+    position: absolute;
+    background-image: url("../assets/img/div/menu-top-bg.png");
+    height: 150px;  
+    width: 100%;
+    left: 0px;
+    top: 2100px;
+  }
+
+  .menu-box-below {
+    position: absolute;
+    background-image: url("../assets/img/div/menu-bottom-bg.png");
+    height: 150px;  
+    width: 100%;
+    left: 0px;
+    top: 2750px;
+  }

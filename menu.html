@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzAddict - Index</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="#" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/div.css" rel="stylesheet" />
+        <link href="css/bg.css" rel="stylesheet" />
+        <link href="css/header.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/menu.css" />
+</head>
+<body>
+    <!--Nav-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="#page-top"><img src="assets/img/pizzAddictlogo.jpg" alt="..."/></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars ms-1"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+              <li class="nav-item dropdown" id="cart">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-shopping-cart"></i> (<span id="count">0</span>)</a>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li class="container">
+                      <p id="usernameDisplay" hidden></p>
+                      <p id="firstNameDisplay"></p>
+                      <p id="lastNameDisplay" hidden></p>
+                    <div id="cart">
+                      <div id="cartItem"></div>
+                      <p id="total">Php 0.00</p>
+                     
+                      <!--  Example Checkout Button -->
+                      <a class="btn btn-primary btn-sm text-uppercase" href="#services" id="checkoutButton"><span><i class="fas fa-shopping-cart"></i></span>  Check Out</a>
+                     </div> 
+                </li>
+                  
+                </ul>
+              </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fas fa-user-alt"></i> 
+                              <span id="firstNameDisplay"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myorders" href="#">My Orders</a></li>
+                                <li><a class="dropdown-item" href="#"></a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" onclick="logout()" >Log Out</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                  </div>
+            </div>
+      </nav>
+<!--CAro-->
+    <!-- Masthead-->
+    <header class="menu-header" style="padding-top: 9%;">
+        <div class="text-center">
+            <h2 class="" style="font-size:50px" >Our Menu</h2>
+            <p>Home / Menu</p>
+          <br><br><br><br><br>
+        </div>
+    </header>
+    <!--Menu--> 
+    <!--Start Pizza-->
+            <br> <br> <br> <br> <br>
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Specialties</h2>
+                    <h3 class="section-subheading text-muted">Fresh from PizzAddict</h3>
+                </div>
+                <br>
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 ">
+                    <div class="col">
+                      <div class="card border-1 shadow-lg">
+                        <img src="./assets/img/pizza/hawaiian.png" class="card-img-top">
+                        <div class="card-body">
+                        <div class="cointainer">
+                          <h2 class="card-title " style="text-align: center;">Hawaiian</h2>
+                          <p class="card-text" >Hawaiian pizza is made with cheese, grilled ham, pineapple, and pizza sauce. 
+                            It tastes great and is unquestionably salty, sweet, and cheesy!</p>
+                          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hawaiian" href="login.html" > Order Now</a>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card border-1 shadow-lg">
+                        <img src="./assets/img/pizza/bufallochicken.png" class="card-img-top">
+                        <div class="card-body">
+                          <h2 class="card-title" style="text-align: center;">Buffalo Chicken</h2>
+                          <p class="card-text">
+                            A ton of melted mozzarella and parmesan cheese is smothered over the buffalo chicken pizza.
+                             The classic buffalo chicken wing flavor of this pizza is created by tossing chopped cooked chicken with buffalo sauce.
+                          </p>
+                          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#buffalo" href="login.html" > Order Now</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card border-1 shadow-lg">
+                        <img src="./assets/img/pizza/supreme.png" class="card-img-top">
+                        <div class="card-body">
+                          <h2 class="card-title" style="text-align: center;">Pizza Supreme</h2>
+                          <p class="card-text" style="margin-bottom: 45px;">
+                            With bacon, pepperoni slices, red and green bell peppers, red onions, 
+                            black olives, mozzarella, Parmesan, and basil, 
+                            it's an authentic pizza par excellence.
+                          </p>
+                          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#supreme" href="login.html" > Order Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 ">
+                    <div class="col">
+                      <div class="card border-1 shadow-lg">
+                        <img src="./assets/img/pizza/hawaiian.png" class="card-img-top">
+                        <div class="card-body">
+                          <h2 class="card-title " style="text-align: center;">Vegetable Pizza</h2>
+                          <p class="card-text" style="margin-bottom: 73px;">Green pepper, onion, mushroom, and tomato</p>
+                          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vegetable" href="login.html" > Order Now</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card border-1 shadow-lg">
+                        <img src="assets/img/pizza/western.png" class="card-img-top">
+                        <div class="card-body">
+                          <h2 class="card-title" style="text-align: center;">Western Pizza</h2>
+                          <p class="card-text">
+                            Sausage, bacon, onion, cheddar, mozarella, sweet and tangy bbq sauce.
+                          </p>
+                          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#western" href="login.html" > Order Now</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card border-1 shadow-sm">
+                        <img src="assets/img/pizza/meat.png" class="card-img-top">
+                        <div class="card-body">
+                          <h2 class="card-title" style="text-align: center;">All Meat Pizza</h2>
+                          <p class="card-text" style="margin-bottom: 45px;">
+                            Sausage, pepperoni, bacon, and Canadian bacon
+                          </p>
+                          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meat" href="login.html" > Order Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+    <!--End Pizza-->
+    
+    
+    <!--Start Sandwiches-->
+    <br><br><br><br>
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Our Sandwhiches</h2>
+            <h3 class="section-subheading text-muted">Fresh from PizzAddict</h3>
+        </div>
+        <br><br>
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 ">
+            <div class="col">
+              <div class="card border-1 shadow-lg">
+                <img src="assets/img/sandwiches/seafood.jpg" class="card-img-top">
+                <div class="card-body">
+                    <div class='box'>
+                        <div class='img-box'>
+                          <img class='images card-img-top' src=''>
+                        </div>
+                        <div class='bottom'>
+                          <h2 class="p">Seafood Sandwhich</h2>
+                          <p class="card-text">
+                            This sandwich is unique in that the bread has been
+                            lightly oiled with butter beforehand, giving it a very moist texture.
+                          </p>
+                          <h4 class="h2">₱ 120.00</h4>
+                          <div>
+                            <button class="btn btn-primary btn-sm text-uppercase" onclick='addtocart(0)'>Add to cart</button>
+                            <input type='number' id='quantity0' value='1' min='1' style='width: 40px;'>
+                          </div>
+                        </div>
+                      </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-1 shadow-lg">
+                <img src="assets/img/sandwiches/cheese.jpg" class="card-img-top">
+                <div class="card-body">
+                    <div class='box'>
+                        <div class='img-box'>
+                          <img class='images card-img-top' src=''>
+                        </div>
+                        <div class='bottom'>
+                          <h2 class="p">Grilled Cheese</h2>
+                          <p class="card-text">
+                            This sandwich is unique in that the bread has been
+                            lightly oiled with butter beforehand, giving it a very moist texture.
+                          </p>
+                          <h4 class="h2">₱ 120.00</h4>
+                          <div>
+                            <button class="btn btn-primary btn-sm text-uppercase" onclick='addtocart(1)'>Add to cart</button>
+                            <input type='number' id='quantity1' value='1' min='1' style='width: 40px;'>
+                          </div>
+                        </div>
+                      </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-1 shadow-lg">
+                <img src="assets/img/sandwiches/tuna.jpg" class="card-img-top">
+                <div class="card-body">
+                    <div class='box'>
+                        <div class='img-box'>
+                          <img class='images card-img-top' src=''>
+                        </div>
+                        <div class='bottom'>
+                          <h2 class="p">Tuna Sandwhich</h2>
+                          <p class="card-text">
+                            This sandwich is unique in that the bread has been
+                            lightly oiled with butter beforehand, giving it a very moist texture.
+                          </p>
+                          <h4 class="h2">₱ 120.00</h4>
+                          <div>
+                            <button class="btn btn-primary btn-sm text-uppercase" onclick='addtocart(2)'>Add to cart</button>
+                            <input type='number' id='quantity2' value='1' min='1' style='width: 40px;'>
+                          </div>
+                        </div>
+                      </div>
+                  
+                </div>
+              </div>
+            </div>
+          
+    </div>
+    <!--End SAndwiches-->
+    
+    
+    <!--Start Beve-->
+    <br><br><br><br>
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Our Beverages</h2>
+            <h3 class="section-subheading text-muted">Fresh from PizzAddict</h3>
+        </div>
+        <br><br>
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 ">
+            <div class="col">
+              <div class="card border-1 shadow-lg">
+                <img src="assets/img/drink/milkshake.jpg" class="card-img-top">
+                <div class="card-body">
+                <div class="cointainer">
+                  <h2 class="card-title " style="text-align: center;">Milk Shakes</h2>
+                  <p class="card-text" >There are three flavors: chocolate, strawberry, and banana</p>
+                  <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shake" href="login.html" > Order Now</a>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-1 shadow-lg">
+                <img src="assets/img/sandwiches/cheese.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h2 class="card-title" style="text-align: center;">Milk Tea</h2>
+                  <p class="card-text">
+                    This sandwich is unique in that the bread has been
+                    lightly oiled with butter beforehand, giving it a very moist texture.
+                  </p>
+                  <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tea" href="login.html" > Order Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-1 shadow-lg">
+                <img src="assets/img/sandwiches/tuna.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h2 class="card-title" style="text-align: center;">Iced Coffee</h2>
+                  <p class="card-text" style="margin-bottom: 45px;">
+                    They are made with boiled eggs and canned tuna.
+                  </p>
+                  <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#coffee" href="login.html" > Order Now</a>
+                </div>
+              </div>
+            </div>
+          
+    </div>
+  
+  <!-- Pizza Hawaiian -->
+  <div class="modal fade" id="hawaiian" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Hawaiian</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"><br><br>
+                        <img src="./assets/img/pizza/hawaiian.png" class="product-pizza" style="width: auto; height: 150px; margin-left: auto; margin-right: auto;"><br><br>
+                        <h2 class="p">Hawaiian - Small</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 90.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(3)'>Add to cart</button>
+                        <input type='number' id='quantity3' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4"><br>
+                        <img src="./assets/img/pizza/hawaiian.png" class="product-pizza" style="width: auto; height: 200px ;"><br>
+                        <h2 class="p">Hawaiian-Medium</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 150.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(4)'>Add to cart</button>
+                        <input type='number' id='quantity4' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./assets/img/pizza/hawaiian.png" class="product-pizza" style="width: auto; height: 250px;">
+                        <h2 class="p">Hawaiian-Family</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 190.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(5)'>Add to cart</button>
+                        <input type='number' id='quantity5' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pizza Buffalo -->
+  <div class="modal fade" id="buffalo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Buffalo Chicken</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"><br><br>
+                        <img src="./assets/img/pizza/bufallochicken.png" class="product-pizza" style="width: auto; height: 150px; margin-left: auto; margin-right: auto;"><br><br>
+                        <h2 class="p">Buffalo Chicken - Small</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 90.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(6)'>Add to cart</button>
+                        <input type='number' id='quantity6' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4"><br>
+                        <img src="./assets/img/pizza/bufallochicken.png" class="product-pizza" style="width: auto; height: 200px ;"><br>
+                        <h2 class="p">Buffalo Chicken-Medium</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 150.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(7)'>Add to cart</button>
+                        <input type='number' id='quantity7' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./assets/img/pizza/bufallochicken.png" class="product-pizza" style="width: auto; height: 250px;">
+                        <h2 class="p">Buffalo Chicken-Family</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 190.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(8)'>Add to cart</button>
+                        <input type='number' id='quantity8' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pizza Supreme -->
+  <div class="modal fade" id="supreme" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Pizza Supreme</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"><br><br>
+                        <img src="./assets/img/pizza/supreme.png" class="product-pizza" style="width: auto; height: 150px; margin-left: auto; margin-right: auto;"><br><br>
+                        <h2 class="p">Supreme - Small</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 90.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(9)'>Add to cart</button>
+                        <input type='number' id='quantity9' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4"><br>
+                        <img src="./assets/img/pizza/supreme.png" class="product-pizza" style="width: auto; height: 200px ;"><br>
+                        <h2 class="p">Supreme -Medium</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 150.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(10)'>Add to cart</button>
+                        <input type='number' id='quantity10' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./assets/img/pizza/supreme.png" class="product-pizza" style="width: auto; height: 250px;">
+                        <h2 class="p">Supreme - Family</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 190.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(11)'>Add to cart</button>
+                        <input type='number' id='quantity11' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Vegetable Pizza -->
+  <div class="modal fade" id="vegetable" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Vegetable Pizza</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"><br><br>
+                        <img src="./assets/img/pizza/veg.png" class="product-pizza" style="width: auto; height: 150px; margin-left: auto; margin-right: auto;"><br><br>
+                        <h2 class="p">Vegetable Pizza - Small</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 90.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(12)'>Add to cart</button>
+                        <input type='number' id='quantity12' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4"><br>
+                        <img src="./assets/img/pizza/veg.png" class="product-pizza" style="width: auto; height: 200px ;"><br>
+                        <h2 class="p">Vegetable Pizza -Medium</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 150.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(13)'>Add to cart</button>
+                        <input type='number' id='quantity13' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./assets/img/pizza/veg.png" class="product-pizza" style="width: auto; height: 250px;">
+                        <h2 class="p">Vegetable Pizza - Family</h2>
+                        <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                        
+                         <h4 class="h2">₱ 190.00</h4>
+                        <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(14)'>Add to cart</button>
+                        <input type='number' id='quantity14' value='1' min='1' style='width: 40px;'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Western Pizza -->
+  <div class="modal fade" id="western" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Western Pizza</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-4"><br><br>
+                    <img src="./assets/img/pizza/western.png" class="product-pizza" style="width: auto; height: 150px; margin-left: auto; margin-right: auto;"><br><br>
+                    <h2 class="p">Western Pizza - Small</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 90.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(15)'>Add to cart</button>
+                    <input type='number' id='quantity15' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4"><br>
+                    <img src="./assets/img/pizza/western.png" class="product-pizza" style="width: auto; height: 200px ;"><br>
+                    <h2 class="p">Western Pizza -Medium</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 150.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(16)'>Add to cart</button>
+                    <input type='number' id='quantity16' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/pizza/western.png" class="product-pizza" style="width: auto; height: 250px;">
+                    <h2 class="p">Western Pizza - Family</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 190.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(17)'>Add to cart</button>
+                    <input type='number' id='quantity17' value='1' min='1' style='width: 40px;'>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  All Meat Pizza -->
+  <div class="modal fade" id="meat" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">All Meat Pizza</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-4"><br><br>
+                    <img src="./assets/img/pizza/meat.png" class="product-pizza" style="width: auto; height: 150px; margin-left: auto; margin-right: auto;"><br><br>
+                    <h2 class="p">Meat Pizza - Small</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 90.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(18)'>Add to cart</button>
+                    <input type='number' id='quantity18' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4"><br>
+                    <img src="./assets/img/pizza/meat.png" class="product-pizza" style="width: auto; height: 200px ;"><br>
+                    <h2 class="p">Meat -Medium</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 150.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(19)'>Add to cart</button>
+                    <input type='number' id='quantity19' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/pizza/meat.png" class="product-pizza" style="width: auto; height: 250px;">
+                    <h2 class="p">Meat - Family</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 190.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(20)'>Add to cart</button>
+                    <input type='number' id='quantity20' value='1' min='1' style='width: 40px;'>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--  Milk Shakes -->
+  <div class="modal fade" id="shake" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Milk Shakes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Vanilla Corn - Milk Shake</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 90.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(21)'>Add to cart</button>
+                    <input type='number' id='quantity21' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Chocolate - Milk Shake</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 150.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(22)'>Add to cart</button>
+                    <input type='number' id='quantity22' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Strawberry - Milk Shake</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 190.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(23)'>Add to cart</button>
+                    <input type='number' id='quantity23' value='1' min='1' style='width: 40px;'>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Milk Tea -->
+  <div class="modal fade" id="tea" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Milk Tea</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Hokaido - Milk Tea</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 90.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(24)'>Add to cart</button>
+                    <input type='number' id='quantity24' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Okinawa - Milk Tea</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 150.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(25)'>Add to cart</button>
+                    <input type='number' id='quantity25' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Blue Berry Cheese Cake - Milk Shake</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 190.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(26)'>Add to cart</button>
+                    <input type='number' id='quantity26' value='1' min='1' style='width: 40px;'>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Iced Coffee -->
+  <div class="modal fade" id="coffee" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Iced Coffee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Mocha - Iced Coffee</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 90.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(27)'>Add to cart</button>
+                    <input type='number' id='quantity27' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Matcha - Iced Coffee</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 150.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(28)'>Add to cart</button>
+                    <input type='number' id='quantity28' value='1' min='1' style='width: 40px;'>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/img/drink/milkshake.jpg" class="card-img-top">
+                    <h2 class="p">Creamy Latte - Iced Coffee</h2>
+                    <p>We are pizza at heart. Our goal is to enable you to happy with the pizza we had. Would you like a slice?</p>
+                    
+                     <h4 class="h2">₱ 190.00</h4>
+                    <button class="btn btn-primary btn-sm text-uppercase" data-bs-dismiss="modal" onclick='addtocart(29)'>Add to cart</button>
+                    <input type='number' id='quantity29' value='1' min='1' style='width: 40px;'>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!--  My Orders -->
+   <div class="modal fade" id="myorders" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">My Orders</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table" id="transactionsTable">
+                <!-- Table headers -->
+                <thead>
+                  <tr>
+                    <th>Order Reference No.</th>
+                    <th>User Details</th>
+                    <th>Order Details</th>
+                    <th>Amount to Pay</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Order Status</th>
+                  </tr>
+                </thead>
+                <tbody id="transactionsTableBody">
+                  <!-- Table content will go here -->
+                </tbody>
+              </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!--End Beve-->
+    <br><br><br><br><br><br><br><br>
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; PizzAddict 2023</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script>
+        var cart = [];
+    
+                    function addtocart(id) {
+            const selectedItem = {
+                id: id,
+                title: document.getElementsByClassName('p')[id].innerText,
+                price: parseFloat(document.getElementsByClassName('h2')[id].innerText.slice(2))
+            };
+
+            const quantity = parseInt(document.getElementById(`quantity${id}`).value);
+            const existingItem = cart.find(item => item.id === id);
+
+            let addToCart = true;
+
+            if (existingItem) {
+                addToCart = window.confirm('This item is already in your cart. Do you want to add more?');
+                if (addToCart) {
+                existingItem.quantity += quantity;
+                }
+            } else {
+                selectedItem.quantity = quantity;
+                cart.push(selectedItem);
+                window.alert('Item Added to Cart');
+            }
+
+            if (addToCart) {
+                displaycart();
+            }
+            }
+
+    
+    
+        function delElement(index) {
+          cart.splice(index, 1);
+          displaycart();
+        }
+    
+        function displaycart() {
+          let total = 0;
+          document.getElementById("count").innerHTML = cart.length;
+          const cartItems = cart.map((item, index) => {
+            var { title, price, quantity } = item;
+            total += price * quantity;
+            return (
+              `<div class='cart-item'>
+                <p style='font-size:12px;'>${title}</p>
+                <h2 style='font-size: 15px;'>Php ${price.toFixed(2)} x ${quantity}</h2>
+                <div>
+                  <button onclick='delElement(${index})' style='margin-right: 5px;'>Remove</button>
+                  <input type='number' value='${quantity}' min='1' onchange='updateQuantity(${index}, this.value)' style='width: 40px;'>
+                </div>
+              </div>`
+            );
+          }).join('');
+          
+          document.getElementById("cartItem").innerHTML = cart.length === 0 ? "Your cart is empty" : cartItems;
+          document.getElementById("total").innerHTML = `Php ${total.toFixed(2)}`;
+        }
+    
+        function updateQuantity(index, newQuantity) {
+          cart[index].quantity = parseInt(newQuantity);
+          displaycart();
+        }
+    
+    
+        
+    
+      </script>
+    
+    <script>
+        // Function to get parameters from the URL
+          // Function to get parameters from the URL
+          function getURLParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const params = {};
+            for (const param of urlParams.entries()) {
+              params[param[0]] = param[1];
+            }
+            return params;
+          }
+    
+          // Display username, first name, and last name on the index.html page
+          window.onload = function() {
+            const { username, 'first-name': firstName, 'last-name': lastName } = getURLParams();
+    
+            if (username && firstName && lastName) {
+              document.getElementById('usernameDisplay').innerText = username;
+              document.getElementById('firstNameDisplay').innerText = firstName;
+              document.getElementById('lastNameDisplay').innerText = lastName;
+            }
+          };
+    
+    
+        function logout() {
+          localStorage.removeItem('loggedInUser');
+          window.location.href = 'index.html';
+          clearCart();
+        }
+    
+        
+      </script>
+    
+      <script>
+    function saveTransactionToLocalStorage(transaction) {
+      let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    
+      // Generate a unique transaction reference number
+      const referenceNumber = generateReferenceNumber();
+      
+      // Get current date and time
+      const currentDate = new Date().toLocaleDateString();
+      const currentTime = new Date().toLocaleTimeString();
+    
+      // Include additional information in the transaction object
+      const enhancedTransaction = {
+        referenceNumber,
+        status: 'Pending',
+        date: currentDate,
+        time: currentTime,
+        ...transaction.userInfo, // Spread the user info
+        cartInfo: {
+          ...transaction.cartInfo,
+          cartItems: [...transaction.cartInfo.cartItems], // Copy cart items
+        },
+      };
+    
+      transactions.push(enhancedTransaction);
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+    }
+    
+    // Rest of your code remains unchanged
+    
+    
+    // Function to generate a unique reference number (you can modify this based on your requirements)
+    function generateReferenceNumber() {
+      return Math.random().toString(36).substr(2, 9); // Generate a random alphanumeric string
+    }
+    
+    
+    function getUserInfo() {
+      const username = document.getElementById("usernameDisplay").textContent;
+      const firstName = document.getElementById("firstNameDisplay").textContent;
+      const lastName = document.getElementById("lastNameDisplay").textContent;
+    
+      return {
+        username,
+        firstName,
+        lastName,
+      };
+    }
+    
+    
+    function getCartInfo() {
+      let total = 0;
+    
+      const cartItems = cart.map((item) => {
+        var { image, title, price, quantity } = item;
+        total += price * quantity;
+        return {
+          image,
+          title,
+          price,
+          quantity,
+        };
+      });
+    
+      return {
+        cartItems,
+        total,
+      };
+    }
+    
+    function checkout() {
+      const userInfo = getUserInfo();
+      const cartInfo = getCartInfo();
+    
+      // Create a transaction object containing user and cart information
+      const transaction = {
+        userInfo,
+        cartInfo,
+      };
+    
+      // Save the transaction to local storage
+      saveTransactionToLocalStorage(transaction);
+
+         // Display a thank you message
+        alert("Order has been placed, Thank for your continued patronage!");
+
+      location.reload()
+      
+      clearCart();
+    }
+    
+    document.getElementById("checkoutButton").addEventListener("click", function() {
+      checkout();
+      
+    });
+    
+    
+    </script>
+
+    <script>
+        function displayTransactionsFromLocalStorage() {
+
+            const { username, 'first-name': firstName, 'last-name': lastName } = getURLParams();
+
+
+  const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+  const tableBody = document.getElementById('transactionsTableBody');
+
+  transactions.forEach((transaction, index) => {
+    console.log(transaction); // Check the structure of the transaction object
+    if (transaction.lastName === lastName && transaction.firstName === firstName) {
+      const { cartInfo } = transaction;
+
+      const userCartRow = `
+        <tr>
+          <td>${transaction.referenceNumber}</td>
+          <td> 
+            <p>${transaction.lastName}, ${transaction.firstName}</p>
+          </td>
+          <td>
+            ${cartInfo.cartItems.map((item) => `
+              <div>
+                <p>${item.title}, ${item.price.toFixed(2)} x ${item.quantity}</p>
+              </div>
+            `).join('')}
+          </td>
+          <td>${cartInfo.total}.00</td>
+          <td>${transaction.date}</td>
+          <td>${transaction.time}</td>
+          <td>${transaction.status}</td>
+        </tr>
+      `;
+
+      tableBody.insertAdjacentHTML('beforeend', userCartRow);
+    }
+  });
+}
+
+// Call the function to display saved transactions on page load or whenever needed
+displayTransactionsFromLocalStorage();
+
+    </script>
+    
+     
+
+    
+</body>
+</html>

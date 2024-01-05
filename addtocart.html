@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Catalog</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top"><img src="assets/img/pizzAddictlogo.jpg" alt="..."/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#services">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item dropdown" id="cart">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-shopping-cart"></i> (<span id="count">0</span>)</a>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li class="container">
+                        <p id="usernameDisplay" hidden></p>
+                        <p id="firstNameDisplay"></p>
+                        <p id="lastNameDisplay" hidden></p>
+                      <div id="cart">
+                        <p>Cart (<span id="count">0</span>)</p>
+                        <div id="cartItem"></div>
+                        <p id="total">Php 0.00</p>
+                        <button id="checkoutButton">Checkout</button>
+                        <!--  Example Checkout Button -->
+                        <a class="btn btn-primary btn-sm text-uppercase" href="#services" onclick="checkout()"><span><i class="fas fa-shopping-cart"></i></span>  Check Out</a>
+                       </div> 
+                  </li>
+                    
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user-alt"></i> <span id="loggedInUser" class="loggedInUser"></span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item" href="register.html">Register</a></li>
+                    <li><a class="dropdown-item" href="#"></a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#" id="signInOutButton" onclick="toggleSignInOut()">Sign-In</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<table id="transactionsTable">
+    <!-- Table headers -->
+    <thead>
+      <tr>
+        <th>Order Reference No.</th>
+        <th>User Details</th>
+        <th>Order Details</th>
+        <th>Amount to Pay</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody id="transactionsTableBody">
+      <!-- Table content will go here -->
+    </tbody>
+  </table>
+  
+
+  <div id="root">
+    <div class='box'>
+      <div class='img-box'>
+        <img class='images' src='image/gg-1.jpg'>
+      </div>
+      <div class='bottom'>
+        <p class="p">Pizza 1</p>
+        <h2 class="h2">₱ 120.50</h2>
+        <div>
+          <button onclick='addtocart(0)'>Add to cart</button>
+          <input type='number' id='quantity0' value='1' min='1' style='width: 40px;'>
+        </div>
+      </div>
+    </div>
+
+    <div class='box'>
+      <div class='img-box'>
+        <img class='images' src='image/gg-1.jpg'>
+      </div>
+      <div class='bottom'>
+        <p class="p">Pizza 2</p>
+        <h2 class="h2">₱ 120.00</h2>
+        <div>
+          <button onclick='addtocart(1)'>Add to cart</button>
+          <input type='number' id='quantity1' value='1' min='1' style='width: 40px;'>
+        </div>
+      </div>
+    </di>
+
+    <div class='box'>
+      <div class='img-box'>
+        <img class='images' src='image/gg-1.jpg'>
+      </div>
+      <div class='bottom'>
+        <p class="p">Pizza 3</p>
+        <h2 class="h2">₱ 120.05</h2>
+        <div>
+          <button onclick='addtocart(2)'>Add to cart</button>
+          <input type='number' id='quantity2' value='1' min='1' style='width: 40px;'>
+        </div>
+      </div>
+    </di>
+    <div class='box'>
+      <div class='img-box'>
+        <img class='images' src='image/gg-1.jpg'>
+      </div>
+      <div class='bottom'>
+        <p class="p">Pizza 3</p>
+        <h2 class="h2" id="pizzaPrice">Select Size</h2>
+        <div>
+        <select id='pizzaSize' onchange="updatePrice()">
+            <option value='small'>Small</option>
+            <option value='medium'>Medium</option>
+            <option value='large'>Large</option>
+        </select>
+        </div></br>
+          <button onclick='addtocart(3)'>Add to cart</button>
+          <input type='number' id='quantity3' value='1' min='1' style='width: 40px;'>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var cart = [];
+
+    function addtocart(id) {
+      const selectedItem = {
+        id: id,
+        image: document.getElementsByClassName('images')[id].src,
+        title: document.getElementsByClassName('p')[id].innerText,
+        price: parseFloat(document.getElementsByClassName('h2')[id].innerText.slice(2))
+      };
+
+      const quantity = parseInt(document.getElementById(`quantity${id}`).value);
+      const existingItem = cart.find(item => item.id === id);
+
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        selectedItem.quantity = quantity;
+        cart.push(selectedItem);
+      }
+
+      
+      displaycart();
+    }
+
+
+    function delElement(index) {
+      cart.splice(index, 1);
+      displaycart();
+    }
+
+    function displaycart() {
+      let total = 0;
+      document.getElementById("count").innerHTML = cart.length;
+      const cartItems = cart.map((item, index) => {
+        var { image, title, price, quantity } = item;
+        total += price * quantity;
+        return (
+          `<div class='cart-item'>
+            <div class='row-img'>
+                <img class='rowimg' src=${image}>
+            </div>
+            <p style='font-size:12px;'>${title}</p>
+            <h2 style='font-size: 15px;'>Php ${price.toFixed(2)} x ${quantity}</h2>
+            <div>
+              <button onclick='delElement(${index})' style='margin-right: 5px;'>Remove</button>
+              <input type='number' value='${quantity}' min='1' onchange='updateQuantity(${index}, this.value)' style='width: 40px;'>
+            </div>
+          </div>`
+        );
+      }).join('');
+      
+      document.getElementById("cartItem").innerHTML = cart.length === 0 ? "Your cart is empty" : cartItems;
+      document.getElementById("total").innerHTML = `Php ${total.toFixed(2)}`;
+    }
+
+    function updateQuantity(index, newQuantity) {
+      cart[index].quantity = parseInt(newQuantity);
+      displaycart();
+    }
+
+
+    
+
+  </script>
+
+<script>
+    // Function to get parameters from the URL
+      // Function to get parameters from the URL
+      function getURLParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const params = {};
+        for (const param of urlParams.entries()) {
+          params[param[0]] = param[1];
+        }
+        return params;
+      }
+
+      // Display username, first name, and last name on the index.html page
+      window.onload = function() {
+        const { username, 'first-name': firstName, 'last-name': lastName } = getURLParams();
+
+        if (username && firstName && lastName) {
+          document.getElementById('usernameDisplay').innerText = username;
+          document.getElementById('firstNameDisplay').innerText = firstName;
+          document.getElementById('lastNameDisplay').innerText = lastName;
+        }
+      };
+
+
+    function logout() {
+      localStorage.removeItem('loggedInUser');
+      window.location.href = 'index.html';
+    }
+
+    
+  </script>
+
+  <script>
+function saveTransactionToLocalStorage(transaction) {
+  let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+  // Generate a unique transaction reference number
+  const referenceNumber = generateReferenceNumber();
+  
+  // Get current date and time
+  const currentDate = new Date().toLocaleDateString();
+  const currentTime = new Date().toLocaleTimeString();
+
+  // Include additional information in the transaction object
+  const enhancedTransaction = {
+    referenceNumber,
+    status: 'Pending',
+    date: currentDate,
+    time: currentTime,
+    ...transaction.userInfo, // Spread the user info
+    cartInfo: {
+      ...transaction.cartInfo,
+      cartItems: [...transaction.cartInfo.cartItems], // Copy cart items
+    },
+  };
+
+  transactions.push(enhancedTransaction);
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+}
+
+// Rest of your code remains unchanged
+
+
+// Function to generate a unique reference number (you can modify this based on your requirements)
+function generateReferenceNumber() {
+  return Math.random().toString(36).substr(2, 9); // Generate a random alphanumeric string
+}
+
+
+function getUserInfo() {
+  const username = document.getElementById("usernameDisplay").textContent;
+  const firstName = document.getElementById("firstNameDisplay").textContent;
+  const lastName = document.getElementById("lastNameDisplay").textContent;
+
+  return {
+    username,
+    firstName,
+    lastName,
+  };
+}
+
+
+function getCartInfo() {
+  let total = 0;
+
+  const cartItems = cart.map((item) => {
+    var { image, title, price, quantity } = item;
+    total += price * quantity;
+    return {
+      image,
+      title,
+      price,
+      quantity,
+    };
+  });
+
+  return {
+    cartItems,
+    total,
+  };
+}
+
+function checkout() {
+  const userInfo = getUserInfo();
+  const cartInfo = getCartInfo();
+
+  // Create a transaction object containing user and cart information
+  const transaction = {
+    userInfo,
+    cartInfo,
+  };
+
+  // Save the transaction to local storage
+  saveTransactionToLocalStorage(transaction);
+  location.reload()
+  
+  clearCart();
+}
+
+document.getElementById("checkoutButton").addEventListener("click", function() {
+  checkout();
+  
+});
+
+
+</script>
+
+  <script>
+    function displayTransactionsFromLocalStorage() {
+  const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+  const tableBody = document.getElementById('transactionsTableBody');
+
+  transactions.forEach((transaction, index) => {
+    const {cartInfo } = transaction;
+
+    const userCartRow = `
+      <tr>
+        <td>${transaction.referenceNumber}</td>
+        <td> 
+          <p>${transaction.lastName},${transaction.firstName}</p>
+        </td>
+        <td>
+          ${cartInfo.cartItems.map((item) => `
+            <div>
+              <p>${item.title},${item.price.toFixed(2)} x ${item.quantity}</p>
+            </div>
+          `).join('')}
+        </td>
+        <td>${cartInfo.total}.00</td>
+        <td>${transaction.date}</td>
+        <td>${transaction.time}</td>
+            <td>${transaction.status}</td>
+      </tr>
+    `;
+
+    tableBody.insertAdjacentHTML('beforeend', userCartRow);
+  });
+}
+
+// Call the function to display saved transactions on page load or whenever needed
+displayTransactionsFromLocalStorage();
+
+
+  </script>
+ 
+</body>
+</html>
